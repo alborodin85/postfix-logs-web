@@ -11,7 +11,7 @@
 	"databaseConfig": {
 		"redis": {
 			"keyPrefix": "laravel_",
-			"host": "redis"
+			"host": "LARAVEL_ECHO"
 		},
 		"sqlite": {
 			"databasePath": "/database/laravel-echo-server.sqlite"
