@@ -8,6 +8,8 @@
 .env
 .env.backup
 .env.production
+.env.dusk.local
+.env.testing
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -20,3 +22,5 @@ yarn-error.log
 
 laravel-echo-server.lock
 laravel-echo-server.json
+
+html/database/bboard
