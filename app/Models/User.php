@@ -11,6 +11,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 /**
  * @property int id
+ *
+ * @method static self firstWhere(...$params)
+ * @method static self find(...$params)
  */
 
 class User extends Authenticatable
@@ -21,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'email_verified_at',
     ];
 
     protected $hidden = [
