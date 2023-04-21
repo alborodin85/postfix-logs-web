@@ -13,6 +13,7 @@ use Laravel\Dusk\TestCase as BaseTestCase;
 abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
+    use DatabaseMigrations;
 
     /**
      * Prepare for Dusk test execution.
