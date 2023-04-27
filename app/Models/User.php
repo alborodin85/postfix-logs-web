@@ -14,6 +14,7 @@ use Laravel\Sanctum\HasApiTokens;
  *
  * @method static self firstWhere(...$params)
  * @method static self find(...$params)
+ * @method static self create(...$params)
  */
 
 class User extends Authenticatable

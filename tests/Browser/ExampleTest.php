@@ -2,28 +2,14 @@
 
 namespace Tests\Browser;
 
-use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Facades\Hash;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
 class ExampleTest extends DuskTestCase
 {
-
-    private array $user;
-    private string $password = '12345678';
-
     public function setUp(): void
     {
         parent::setUp();
-        $this->user = [
-            'name' => 'Vasa',
-            'email' => 'vasa@email.com',
-            'password' => $this->password,
-            'password_confirmation' => $this->password,
-            'email_verified_at' => now()->timestamp,
-        ];
     }
 
     public function testBasicExample(): void
@@ -35,14 +21,11 @@ class ExampleTest extends DuskTestCase
 
     public function testLogin(): void
     {
-        $this->user['password'] = Hash::make($this->password);
-        $user = User::create($this->user);
-        $this->user['password'] = $this->password;
-
-        $this->browse(function (Browser $browser) use ($user) {
+        $this->browse(function (Browser $browser) {
+            $userArray = config('testing.users.test_user');
             $browser->visit(route('login'))
-                ->type('email', $this->user['email'])
-                ->type('password', $this->user['password']);
+                ->type('email', $userArray['email'])
+                ->type('password', $userArray['password']);
             $browser->clickAndWaitForReload('@Login');
             $browser->assertPathIs('/home');
         });
