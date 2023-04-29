@@ -1,0 +1,22 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "noEmitOnError": true,
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "lib": ["dom", "dom.iterable", "scripthost", "esnext"],
+        "types": [
+            "bootstrap"
+        ],
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "strict": true,
+        "noImplicitThis": true,
+        "jsx": "preserve",
+        "skipLibCheck": true,
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
