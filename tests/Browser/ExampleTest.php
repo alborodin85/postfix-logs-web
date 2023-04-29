@@ -26,7 +26,7 @@ class ExampleTest extends DuskTestCase
             $browser->visit(route('login'))
                 ->type('email', $userArray['email'])
                 ->type('password', $userArray['password']);
-            $browser->clickAndWaitForReload('@Login');
+            $browser->clickAndWaitForReload('#login-btn');
             $browser->assertPathIs('/home');
         });
     }
