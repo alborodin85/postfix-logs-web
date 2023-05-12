@@ -3,17 +3,21 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+Route::any('/return-response', function (Request $request) {
+    if ($request->get('throwEmpty')) {
+        return \response('');
+    } elseif ($request->get('throwHtml')) {
+        return \response('<!DOCTYPE html><html lang="en"><head><title>Title</title></head></html>');
+    }
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    $payload = $request->all();
+
+    $content = [
+        'payload' => $payload,
+        'errorCode' => 0,
+        'errorModule' => '',
+        'errorText' => '',
+    ];
+
+    return \response(json_encode($content, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES))->header('content-type', 'application/json');
 });
