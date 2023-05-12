@@ -2,6 +2,8 @@
 
 return [
 
+    'endpoint_api_token' => env('ENDPOINT_API_TOKEN', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
