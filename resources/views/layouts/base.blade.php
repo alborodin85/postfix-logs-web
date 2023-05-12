@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title') :: Объявления</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ mix('css/styles.css') }}">
 </head>
 <body>
@@ -21,7 +21,7 @@
         </form>
         @endauth
     </nav>
-    <h1 class="my-3 text-center">Объявления</h1>
+    <h1 class="my-3 text-center">Postfix logs</h1>
     @yield('main')
 </div>
 </body>
