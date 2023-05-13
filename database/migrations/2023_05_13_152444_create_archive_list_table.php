@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('archive_list', function (Blueprint $table) {
             $table->id();
-            $table->string('lastArchiveFileName');
+            $table->string('fileName');
             $table->timestamps();
         });
     }
