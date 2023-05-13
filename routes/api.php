@@ -25,3 +25,5 @@ Route::any('/return-response', function (Request $request) {
 
 Route::post('add-archives-names', [ArchiveLogsApiController::class, 'addArchivesNames'])->name('addArchivesNames');
 Route::post('get-last-archive', [ArchiveLogsApiController::class, 'getLastArchive'])->name('getLastArchive');
+Route::post('add-archive-emails', [ArchiveLogsApiController::class, 'addArchiveEmails'])->name('addArchiveEmails');
+Route::post('add-archive-log-rows', [ArchiveLogsApiController::class, 'addArchiveLogRows'])->name('addArchiveLogRows');

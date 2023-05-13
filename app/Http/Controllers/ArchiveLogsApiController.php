@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ModelArchiveEmail;
 use App\Models\ModelArchiveListItem;
+use App\Models\ModelArchiveLogRow;
 use App\Services\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -33,6 +35,30 @@ class ArchiveLogsApiController extends Controller
             ModelArchiveListItem::create($fileName);
         }
 
-        return ApiResponse::buildApiResponse('');
+        return ApiResponse::buildApiResponse();
+    }
+
+    public function addArchiveEmails(Request $request): Response
+    {
+        $records = $request->get('records', '');
+
+        foreach($records as $recordArray) {
+            unset($recordArray['id']);
+            ModelArchiveEmail::create($recordArray);
+        }
+
+        return ApiResponse::buildApiResponse();
+    }
+
+    public function addArchiveLogRows(Request $request): Response
+    {
+        $records = $request->get('records', '');
+
+        foreach($records as $recordArray) {
+            unset($recordArray['id']);
+            ModelArchiveLogRow::create($recordArray);
+        }
+
+        return ApiResponse::buildApiResponse();
     }
 }
