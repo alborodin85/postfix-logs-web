@@ -33,7 +33,7 @@ class ApiResponse
     }
 
     public static function buildApiResponse(
-        string $payload, int $errorCode = 0, string $errorModule = '', string $errorText = ''
+        mixed $payload = '', int $errorCode = 0, string $errorModule = '', string $errorText = ''
     ): Response {
 
         $content = [
