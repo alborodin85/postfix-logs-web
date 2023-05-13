@@ -40,7 +40,11 @@ class ArchiveLogsApiController extends Controller
 
     public function addArchiveEmails(Request $request): Response
     {
-        $records = $request->get('records', '');
+        $records = $request->get('records', false);
+
+        if (!$records) {
+            return ApiResponse::buildApiResponse();
+        }
 
         foreach($records as $recordArray) {
             unset($recordArray['id']);
@@ -52,7 +56,11 @@ class ArchiveLogsApiController extends Controller
 
     public function addArchiveLogRows(Request $request): Response
     {
-        $records = $request->get('records', '');
+        $records = $request->get('records', false);
+
+        if (!$records) {
+            return ApiResponse::buildApiResponse();
+        }
 
         foreach($records as $recordArray) {
             unset($recordArray['id']);

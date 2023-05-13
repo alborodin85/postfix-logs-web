@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * @property int $id
@@ -15,9 +17,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $statusCode
  * @property string $statusName
  * @property string $nonDeliveryNotificationId
+ *
+ * @method static Builder truncate()
+ * @method static self create(...$params)
+ * @method static int count()
  */
-class ModelDailyEmail extends Model
+class ModelCurrentEmail extends Model
 {
-    protected $table = 'daily_emails';
-    protected $hidden = [];
+    use HasFactory;
+
+    protected $table = 'current_emails';
+    protected $guarded = [];
 }

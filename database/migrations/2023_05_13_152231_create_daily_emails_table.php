@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('daily_emails', function (Blueprint $table) {
+        Schema::create('current_emails', function (Blueprint $table) {
             $table->id();
             $table->dateTime('dateTime');
             $table->string('queueId');
-            $table->string('from');
-            $table->string('to');
-            $table->text('subject');
+            $table->string('from')->nullable();;
+            $table->string('to')->nullable();;
+            $table->text('subject')->nullable();;
             $table->text('statusText');
             $table->integer('statusCode');
             $table->string('statusName');
-            $table->string('nonDeliveryNotificationId');
+            $table->string('nonDeliveryNotificationId')->nullable();;
             $table->timestamps();
         });
     }

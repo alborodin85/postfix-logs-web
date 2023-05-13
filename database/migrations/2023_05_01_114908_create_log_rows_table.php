@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('daily_log_rows', function (Blueprint $table) {
+        Schema::create('current_log_rows', function (Blueprint $table) {
             $table->id();
             $table->dateTime('dateTime');
             $table->string('hostName');
