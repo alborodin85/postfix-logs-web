@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $statusName
  * @property string $nonDeliveryNotificationId
  */
-class DailyEmail extends Model
+class ModelArchiveEmail extends Model
 {
-    protected $table = 'daily_emails';
+    protected $table = 'archive_emails';
     protected $hidden = [];
 }

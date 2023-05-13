@@ -14,8 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $errorLevel
  * @property string $rowText
  */
-class DailyLogRow extends Model
+class ModelArchiveLogRow extends Model
 {
-    protected $table = 'daily_log_rows';
+    protected $table = 'archive_log_rows';
     protected $hidden = [];
 }
