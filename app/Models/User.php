@@ -10,7 +10,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
- * @property int id
+ * @property int $id
+ * @property boolean $isAdmin
+ * @property string $email
  *
  * @method static self firstWhere(...$params)
  * @method static self find(...$params)
@@ -26,6 +28,7 @@ class User extends Authenticatable
         'email',
         'password',
         'email_verified_at',
+        'isAdmin',
     ];
 
     protected $hidden = [
