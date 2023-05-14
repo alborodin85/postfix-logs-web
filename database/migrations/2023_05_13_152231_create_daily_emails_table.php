@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('daily_emails');
+        Schema::dropIfExists('current_emails');
     }
 };

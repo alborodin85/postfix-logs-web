@@ -36,9 +36,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function bbs(): HasMany
-    {
-        return $this->hasMany(Bb::class);
-    }
 }

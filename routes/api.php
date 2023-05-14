@@ -22,7 +22,7 @@ Route::any('/return-response', function (Request $request) {
     ];
 
     return response(json_encode($content, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES))->header('content-type', 'application/json');
-});
+})->name('returnResponse');
 
 Route::post('add-archives-names', [ArchiveLogsApiController::class, 'addArchivesNames'])->name('addArchivesNames');
 Route::post('get-last-archive', [ArchiveLogsApiController::class, 'getLastArchive'])->name('getLastArchive');
