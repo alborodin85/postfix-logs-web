@@ -26,10 +26,23 @@ class ApiResponse
             abort(500, $errorMessage);
         }
 
+        if (!is_string($arResponse['payload'])) {
+            $arResponse['payload'] = json_encode($arResponse['payload']);
+        }
         $this->payload = $arResponse['payload'];
         $this->errorCode = $arResponse['errorCode'];
         $this->errorModule = $arResponse['errorModule'];
         $this->errorText = $arResponse['errorText'];
+    }
+
+    public function toArray(): array
+    {
+        return [
+            'payload' => $this->payload,
+            'errorCode' => $this->errorCode,
+            'errorModule' => $this->errorModule,
+            'errorText' => $this->errorText,
+        ];
     }
 
     public static function buildApiResponse(
