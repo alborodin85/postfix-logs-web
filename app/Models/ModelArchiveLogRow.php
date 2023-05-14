@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -16,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @method static self create(...$params)
  * @method static int count()
+ * @method static Builder orderByDesc(string $columnName)
  */
 class ModelArchiveLogRow extends Model
 {

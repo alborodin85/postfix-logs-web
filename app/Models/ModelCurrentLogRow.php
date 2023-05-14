@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static Builder truncate()
  * @method static self create(...$params)
  * @method static int count()
+ * @method static Builder orderByDesc(string $columnName)
  */
 class ModelCurrentLogRow extends Model
 {

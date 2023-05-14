@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             User::create($testUserData);
         }
 
-        User::factory(10)->create();
-        User::factory(5)->unverified()->create();
+        User::factory(4)->create();
+        User::factory(2)->unverified()->create();
     }
 }

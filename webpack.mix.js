@@ -9,7 +9,10 @@ fs.symlinkSync('../storage/app/public', './public/storage', "dir");
 mix.ts('resources/js/app.ts', 'public/js/app.js').vue({version: 3});
 mix.sass('resources/scss/styles.scss', 'public/css/styles.css');
 
-mix.sourceMaps(false, 'source-map');
+if (!isProd) {
+    mix.sourceMaps(false, 'source-map');
+    mix.version();
+}
 
 const watchType = process.env.MIX_WATCH_TYPE
 if (watchType === 'browsersync') {

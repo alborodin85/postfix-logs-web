@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Builder;
  * @method static self create(...$params)
  * @method static Builder get()
  * @method static int count()
+ * @method static Builder orderByDesc(string $columnName)
  */
 class ModelArchiveEmail extends Model
 {
