@@ -24,3 +24,7 @@ laravel-echo-server.lock
 laravel-echo-server.json
 
 html/database/bboard
+
+public/mix-manifest.json
+public/css/
+public/js/
