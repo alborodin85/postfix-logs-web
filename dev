@@ -1,0 +1,8 @@
+#!/bin/bash
+
+composer i
+npm i
+php artisan migrate --seed
+php artisan optimize:clear
+npm run dev
+php artisan queue:restart
