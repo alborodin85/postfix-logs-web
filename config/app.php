@@ -58,6 +58,8 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+    'force_https' => env('HTTP_SCHEMA') == 'https',
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
