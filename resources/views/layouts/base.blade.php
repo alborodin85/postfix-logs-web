@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ mix('css/styles.css') }}">
+    <script src="https://unpkg.com/vue@3.2.36"></script>
 </head>
 <body>
 <div class="container">
