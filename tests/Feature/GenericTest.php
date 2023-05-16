@@ -1,10 +1,31 @@
 <?php
 
+use App\Mail\TestSmtpMail;
 use App\Services\ApiResponse;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 
 class GenericTest extends TestCase
 {
+    public function testSmtpQueue()
+    {
+        $mailTo = 'test@test.com';
+        $this->artisan("app:test-smtp $mailTo")->assertExitCode(0);
+    }
+
+    public function testTestSmtpCommand()
+    {
+        Mail::fake();
+
+        $mailTo = 'test@test.com';
+        $this->artisan("app:test-smtp $mailTo")->assertExitCode(0);
+
+        Mail::assertQueued(TestSmtpMail::class, function (TestSmtpMail $mail) use ($mailTo) {
+            return $mail->to = $mailTo;
+        });
+
+    }
+
     public function testScheduler()
     {
         $this->artisan('schedule:run')->assertExitCode(0);
